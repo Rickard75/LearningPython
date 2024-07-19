@@ -10,8 +10,7 @@
 
 def verify_card_number(card_number):
     sum_of_odd_digits = 0
-    card_number_reversed = card_number[0:4:2] # extracts every second digit from 0 to 4 position
-    print(card_number_reversed)
+    card_number_reversed = card_number[-1:-5:-1] # extracts every digit from last to last-4th position    print(card_number_reversed)
 
 def main():
     card_number = '4111-1111-4555-1142'
