@@ -1,6 +1,6 @@
 '''Encryption and decryption using the Vigenere cipher'''
 
-text = 'Hello Zaira'
+text = 'Hello Zaira!'
 custom_key = 'python'
 
 def vigenere(message, key, direction=1): # default direction is straight(=encryption)
@@ -10,8 +10,8 @@ def vigenere(message, key, direction=1): # default direction is straight(=encryp
 
     for char in message.lower():
     
-        # Append space to the message
-        if char == ' ':
+        # Append any non-letter character to the message
+        if char.isalpha():
             final_message += char
         else:        
             # Find the right key character to encode/decode
