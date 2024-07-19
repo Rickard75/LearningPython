@@ -1,7 +1,7 @@
-'''Encryption and decryption using the Vigenere cipher'''
+'''Decryption using the Vigenere cipher: you cannot decipher anything with the wrong key!'''
 
-text = 'Hello Zaira!'
-custom_key = 'python'
+text = 'mrttaqrhknsw ih puggrur'
+custom_key = 'happycoding'
 
 def vigenere(message, key, direction=1): # default direction is straight(=encryption)
     key_index = 0
@@ -11,7 +11,7 @@ def vigenere(message, key, direction=1): # default direction is straight(=encryp
     for char in message.lower():
     
         # Append any non-letter character to the message
-        if char.isalpha():
+        if not char.isalpha():
             final_message += char
         else:        
             # Find the right key character to encode/decode
@@ -32,7 +32,7 @@ def encrypt(message, key):
 def decrypt(message, key):
     return vigenere(message, key, -1)
     
-encryption = encrypt(text, custom_key)
-print(encryption)
-decryption = decrypt(encryption, custom_key)
-print(decryption)
+print(f'\nEncrypted text: {text}')
+print(f'Key: {custom_key}')
+decryption = decrypt(text, custom_key)
+print(f'\nDecrypted text: {decryption}\n')
