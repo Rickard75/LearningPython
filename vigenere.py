@@ -26,8 +26,13 @@ def vigenere(message, key, direction=1): # default direction is straight(=encryp
     
     return final_message
     
-encryption = vigenere(text, custom_key) # default direction=1: encryption
-print('Plain text:      ', text)
-print('Encrytpted text: ', encryption)
-decryption = vigenere(encryption, custom_key, -1) # decryption
-print('Decrypted text:  ', decryption)
+def encrypt(message, key):
+    return vigenere(message, key)
+    
+def decrypt(message, key):
+    return vigenere(message, key, -1)
+    
+encryption = encrypt(text, custom_key)
+print(encryption)
+decryption = decrypt(encryption, custom_key)
+print(decryption)
