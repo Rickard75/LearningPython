@@ -17,7 +17,7 @@ def filter_expenses_by_category(expenses, category):
     
 
 def main():
-    # creatopn of expenses list
+    # creatopn of empty map: it's a list at first sight
     expenses = []
     
     # testing lambda function
