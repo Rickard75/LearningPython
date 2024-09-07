@@ -45,13 +45,21 @@ def arithmetic_arranger(problems, show_answers=True):
             result_row.append(' '*(row_length-len(str(result))) + str(result))
 
     # Unire gli elementi di ciascuna lista con quattro spazi e stampare le righe risultanti
-    print('    '.join(first_row))
-    print('    '.join(second_row))
-    print('    '.join(separator_row))
-    if show_answers:
-        print('    '.join(result_row))
+    #print('    '.join(first_row))
+    #print('    '.join(second_row))
+    #print('    '.join(separator_row))
+    #if show_answers:
+    #    print('    '.join(result_row))
 
-    return problems
+    #return problems
+    output = '    '.join(first_row) + '\n'
+    output += '    '.join(second_row) + '\n'
+    output += '    '.join(separator_row)
+    if show_answers:
+        output += '\n' + '    '.join(result_row)
+
+    return output
+
 
 def contiene_alfabetici(s):
     for char in s:
@@ -59,4 +67,6 @@ def contiene_alfabetici(s):
             return True
     return False
 
-arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123b + 49"],True)
+
+problems = ["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]
+print(arithmetic_arranger(problems,True))
