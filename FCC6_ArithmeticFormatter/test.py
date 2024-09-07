@@ -1,9 +1,9 @@
 def arithmetic_arranger(problems, show_answers=True):
     """problems is a list of strings"""
-    first_row = []
-    second_row = []
-    separator_row = []
-    result_row = []
+    first_row       = [] # implemento le righe come liste
+    second_row      = []
+    separator_row   = []
+    result_row      = []
 
     for pb in problems:
         addend_list = pb.split(' ')         # separo numeri e segno
@@ -30,6 +30,5 @@ def arithmetic_arranger(problems, show_answers=True):
     if show_answers:
         print('    '.join(result_row))
 
-    return problems
 
-print(f'\n{arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])}')
+arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
