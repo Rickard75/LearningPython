@@ -8,9 +8,14 @@ def arithmetic_arranger(problems, show_answers=True):
     for pb in problems:
         addend_list = pb.split(' ')         # separo numeri e segno
         addend_1 = addend_list[0]  
+        # checking addend_1 length
         if (len(addend_1) > 4):
             print("Error: Numbers cannot be more than four digits.")
             break
+        if contiene_alfabetici(addend_1) == True:
+            print("Error: Numbers must only contain digits")
+            break
+        # checking correct operator insertion
         if (addend_list[1] == '*'):
             print("Error: Operator must be '+' or '-'.")
             break      
@@ -19,8 +24,12 @@ def arithmetic_arranger(problems, show_answers=True):
             break      
         sign     = addend_list[1]
         addend_2 = addend_list[2]
+        # checking addend_2 length
         if (len(addend_2) > 4):
             print("Error: Numbers cannot be more than four digits.")
+            break
+        if contiene_alfabetici(addend_2) == True:
+            print("Error: Numbers must only contain digits")
             break
 
         row_length = max(len(addend_list[0]),len(addend_list[2])) + 2       
@@ -44,4 +53,10 @@ def arithmetic_arranger(problems, show_answers=True):
 
     return problems
 
-arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"],True)
+def contiene_alfabetici(s):
+    for char in s:
+        if char.isalpha():
+            return True
+    return False
+
+arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123b + 49"],True)
