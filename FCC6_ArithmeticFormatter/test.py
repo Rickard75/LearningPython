@@ -7,9 +7,21 @@ def arithmetic_arranger(problems, show_answers=True):
 
     for pb in problems:
         addend_list = pb.split(' ')         # separo numeri e segno
-        addend_1 = addend_list[0]           
+        addend_1 = addend_list[0]  
+        if (len(addend_1) > 4):
+            print("Error: Numbers cannot be more than four digits.")
+            break
+        if (addend_list[1] == '*'):
+            print("Error: Operator must be '+' or '-'.")
+            break      
+        if (addend_list[1] == '/'):
+            print("Error: Operator must be '+' or '-'.")
+            break      
         sign     = addend_list[1]
         addend_2 = addend_list[2]
+        if (len(addend_2) > 4):
+            print("Error: Numbers cannot be more than four digits.")
+            break
 
         row_length = max(len(addend_list[0]),len(addend_list[2])) + 2       
         first_row.append(' '*(row_length-len(addend_list[0])) + addend_list[0])        #prima riga
@@ -30,5 +42,6 @@ def arithmetic_arranger(problems, show_answers=True):
     if show_answers:
         print('    '.join(result_row))
 
+    return problems
 
-arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
+arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"],True)
