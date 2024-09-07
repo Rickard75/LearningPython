@@ -34,18 +34,17 @@ def arithmetic_arranger(problems, show_answers=True):
             return "Error: Numbers must only contain digits"
         # checking correct operator insertion
         if (addend_list[1] == '*'):
-            return "Error: Operator must be '+' or '-'."      
+            err = "Error: Operator must be '+' or '-'."
+            return err      
         if (addend_list[1] == '/'):
             return "Error: Operator must be '+' or '-'."      
         sign     = addend_list[1]
         addend_2 = addend_list[2]
         # checking addend_2 length
         if (len(addend_2) > 4):
-            output ="Error: Numbers cannot be more than four digits."
-            break
+            return "Error: Numbers cannot be more than four digits."
         if contiene_alfabetici(addend_2) == True:
-            output = "Error: Numbers must only contain digits"
-            break
+            return "Error: Numbers must only contain digits"
 
         row_length = max(len(addend_list[0]),len(addend_list[2])) + 2       
         first_row.append(' '*(row_length-len(addend_list[0])) + addend_list[0])        #prima riga
@@ -59,7 +58,7 @@ def arithmetic_arranger(problems, show_answers=True):
                 result = int(addend_1) - int(addend_2)
             result_row.append(' '*(row_length-len(str(result))) + str(result))
         counter += 1
-        if counter > 4:
+        if counter > 5:
             return "Error: Too many problems."
         
     # Unire gli elementi di ciascuna lista con quattro spazi e stampare le righe risultanti
