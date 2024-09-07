@@ -12,7 +12,7 @@
 # 2. Add a check for the correct number of problems (maximum 5)                     DONE
 # 3. Add a check for the correct number of digits (maximum 4)                       DONE
 # 4. Add a check for the correct type of characters (only digits are allowed)       DONE
-# 5. Remove call to print in the main, returning output instead                     TO DO
+
 
 
 
