@@ -34,16 +34,23 @@ my_graph = {
     'D': [('A',1), ('C',7)]
 }
 
-def shortest_path(graph, start):
-    unvisited = []                          # list to store the nodes that have not been visited
-    distances = {}                          # dictionary to store the distance of each node from the start node
-    for node in graph:
-        unvisited.append(node)              # add all nodes to the unvisited list
-        if node == start:                   # set the distance of the starting node to 0
-            distances[node] = 0
-        else:
-            distances[node] = float('inf')  # set the distance of all other nodes to infinity
-    print(f'Unvisited: {unvisited}\nDistances: {distances}')
-
-# step 40 on freeCodeCamp
-shortest_path(my_graph,'A')
+def shortest_path(graph, start, target = ''):
+    unvisited = list(graph)
+    distances = {node: 0 if node == start else float('inf') for node in graph}
+    paths = {node: [] for node in graph}
+    paths[start].append(start)
+    
+    while unvisited:
+        current = min(unvisited, key=distances.get)
+        for node, distance in graph[current]:
+            if distance + distances[current] < distances[node]:
+                distances[node] = distance + distances[current]
+                if paths[node] and paths[node][-1] == node:
+                    paths[node] = paths[current][:]
+                else:
+                    paths[node].extend(paths[current])
+                paths[node].append(node)
+        unvisited.remove(current)
+    print(f'Unvisited: {unvisited}\nDistances: {distances}\nPaths: {paths}')
+    
+shortest_path(my_graph, 'A')
