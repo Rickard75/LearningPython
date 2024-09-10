@@ -47,3 +47,6 @@ def shortest_path(graph, start):
 
 # step 40 on freeCodeCamp
 shortest_path(my_graph,'A')
+shortest_path(my_graph,'B')
+shortest_path(my_graph,'C')
+shortest_path(my_graph,'D')
