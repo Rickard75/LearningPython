@@ -1,29 +1,3 @@
-"""Example of a dictionary"""
-
-student = {
-    'name'      : 'Riccardo',
-    'age'       : 0,
-    'university': 'University of Padova',
-    'email'     : 'riccardo.carroccio@studenti.unipd',
-    'food'      : 'pizza'
-}
-
-student['course'] = 'physics'   # adding a new key-value pair
-student['age']    = '25'        # changing the value of a key
-del student['age']              # deleting a key-value pair
-
-print("Printing using items():")
-for i in student.items():
-    print(i)
-print("\nPrinting using items() with double index:")
-for i,j in student.items():
-    print(i,j)
-print("\nPrinting using values():")
-for i in student.values():
-    print(i)
-
-print('*****************************************************************************************')
-    
 """Shortest path algorithm"""
 # A dictionary representing a graph, where the key is the node and the value is a list of tuples
 # where the first element of the tuple is the node and the second element is the weight of the edge
@@ -34,19 +8,23 @@ my_graph = {
     'D': [('A',1), ('C',7)]
 }
 
-def shortest_path(graph, start):
-    unvisited = []                          # list to store the nodes that have not been visited
-    distances = {}                          # dictionary to store the distance of each node from the start node
-    for node in graph:
-        unvisited.append(node)              # add all nodes to the unvisited list
-        if node == start:                   # set the distance of the starting node to 0
-            distances[node] = 0
-        else:
-            distances[node] = float('inf')  # set the distance of all other nodes to infinity
-    print(f'Unvisited: {unvisited}\nDistances: {distances}')
-
-# step 40 on freeCodeCamp
-shortest_path(my_graph,'A')
-shortest_path(my_graph,'B')
-shortest_path(my_graph,'C')
-shortest_path(my_graph,'D')
+def shortest_path(graph, start, target = ''):
+    unvisited = list(graph)                                                     # list of nodes
+    distances = {node: 0 if node == start else float('inf') for node in graph}  # dictionary of distances
+    paths = {node: [] for node in graph}                                        # dictionary of paths
+    paths[start].append(start)                                                  # add the starting node to the path
+    
+    while unvisited:
+        current = min(unvisited, key=distances.get)                             # get the node with the minimum distance
+        for node, distance in graph[current]:                                   # iterate over the neighbors of the current node
+            if distance + distances[current] < distances[node]:                 # if the distance is less than the current distance update the distance and the path
+                distances[node] = distance + distances[current]                 # update the distance
+                if paths[node] and paths[node][-1] == node:                     # if the last element of the path is the node itself, create a new path
+                    paths[node] = paths[current][:]                             # copy the path of the current node
+                else:                                                           # otherwise, update the path
+                    paths[node].extend(paths[current])                          # extend the path of the current node
+                paths[node].append(node)                                        # append the node to the path
+        unvisited.remove(current)                                               # remove the current node from the unvisited list
+    print(f'Unvisited: {unvisited}\nDistances: {distances}\nPaths: {paths}')    # print the results
+    
+shortest_path(my_graph, 'A')
