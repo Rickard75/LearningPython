@@ -16,7 +16,7 @@
 # TUTORIALS
 **COME INIZIALIZZARE GIT IN UNA CARTELLA LOCALE**
 - Imposta il nome dell'autore
-git config --global user.name Rickard75		
+`git config --global user.name Rickard75`	
 - Imposta la mail dell'autore**
 git config --global user.email pino@gmail.com		
 - Rende la cartella corrente una repository git; ora 'master' è il branch corrente**
