@@ -1,6 +1,5 @@
 # Random Notes
-- added something to try pull
-- se faccio una modifica a un file interno in una sottocartella, bisogna prima fare add+commit in quella sottocartella e solo dopo fare add+commit nella cartella del livello superiore; alternativamente posso eseguire l'add+commit solo nella cartella del livello superiore
+- **GESTIONE SOTTOCARTELLE**: se viene apportata una modifica a un file interno in una sottocartella, bisogna prima fare add+commit in quella sottocartella e solo dopo fare add+commit nella cartella del livello superiore; alternativamente posso eseguire l'add+commit solo nella cartella del livello superiore
 
 **VOCABULARY**
 - track		:	collegare modifiche tra locale e github
