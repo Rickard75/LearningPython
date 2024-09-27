@@ -21,7 +21,8 @@ def caesar(message, offset):
     print('plain text:', message)
     print('encrypted text:', encrypted_text)
 
-caesar(text,shift)
-caesar(text,13)
-caesar(text,1111)
+#caesar(text,shift)
+#caesar(text,13)
+#caesar(text,1111)
 caesar('Viva la pizza', 1)
+caesar('gw150914',1)
