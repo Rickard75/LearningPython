@@ -39,13 +39,13 @@
 `git push origin --delete nome-branch`
 
 **COME FARE IL MERGE DI UN BRANCH SECONDARIO NEL PRINCIPALE (main)**
-`git checkout main`
-`git pull origin main`
-`git checkout feature-branch`
-`git pull origin feature-branch`
-`git checkout main`
-`git merge feature-branch`
-`git push origin main`
+- `git checkout main`
+- `git pull origin main`
+- `git checkout feature-branch`
+- `git pull origin feature-branch`
+- `git checkout main`
+- `git merge feature-branch`
+- `git push origin main`
 
 **COME RIPRISITINARE UN COMMIT ATTRAVERSO IL CODICE HASH**
 - Ripristina e mantiene la cronologia successiva 
