@@ -2,10 +2,12 @@
 # A dictionary representing a graph, where the key is the node and the value is a list of tuples
 # where the first element of the tuple is the node and the second element is the weight of the edge
 my_graph = {
-    'A': [('B', 3), ('D', 1)],
-    'B': [('A', 3), ('C', 4)],
-    'C': [('B',4), ('D',7)],
-    'D': [('A',1), ('C',7)]
+    'A': [('B', 5), ('C', 3), ('E', 11)],
+    'B': [('A', 5), ('C', 1), ('F', 2)],
+    'C': [('A', 3), ('B', 1), ('D', 1), ('E', 5)],
+    'D': [('C', 1), ('E', 9), ('F', 3)],
+    'E': [('A', 11), ('C', 5), ('D', 9)],
+    'F': [('B', 2), ('D', 3)]
 }
 
 def shortest_path(graph, start, target = ''):
@@ -25,6 +27,21 @@ def shortest_path(graph, start, target = ''):
                     paths[node].extend(paths[current])                          # extend the path of the current node
                 paths[node].append(node)                                        # append the node to the path
         unvisited.remove(current)                                               # remove the current node from the unvisited list
-    print(f'Unvisited: {unvisited}\nDistances: {distances}\nPaths: {paths}')    # print the results
+    #print(f'Unvisited: {unvisited}\nDistances: {distances}\nPaths: {paths}')    # print the results
+    targets_to_print = [target] if target else graph
+    for node in targets_to_print:
+        if node == start:
+            continue
+        print(f'\n{start}-{node} distance: {distances[node]}\nPath: {" -> ".join(paths[node])}')
+    # end of while loop
     
+    return distances, paths
+    # end of function
+    
+print('Shortest path algorithm')
+print('*********************')
+print('Graph with target = A')
 shortest_path(my_graph, 'A')
+print('*********************')
+print('Graph with start = A and target = F')
+shortest_path(my_graph,'A','F')
