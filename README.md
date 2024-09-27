@@ -1,26 +1,25 @@
-# LearningPython
-**************RANDOM NOTES************
+# Random Notes
 - added something to try pull
 - se faccio una modifica a un file interno in una sottocartella, bisogna prima fare add+commit in quella sottocartella e solo dopo fare add+commit nella cartella del livello superiore; alternativamente posso eseguire l'add+commit solo nella cartella del livello superiore
 
-*************VOCABULARY****************
-track		:	collegare modifiche tra locale e github
-staging area	:	file that stores info about next commit
-commit		: 	snapshot of state of repository
-repo		:	ordered set of commits
-hash		:	fingerprint of a commmit, its personal "ID code"
-branch		:	isolated set of commits (useful to not ruin working state of project, to experiment new code, not interfering with other developers)
-merge		:	to unify two different branches with a third unifying commit
-tag		:	alias to commit hash, simple name to mark important commits such as releases
-remote		:	repository in a different place (usually online)
+**VOCABULARY**
+- track		:	collegare modifiche tra locale e github
+- staging area	:	file that stores info about next commit
+- commit		: 	snapshot of state of repository
+- repo		:	ordered set of commits
+- hash		:	fingerprint of a commmit, its personal "ID code"
+- branch		:	isolated set of commits (useful to not ruin working state of project, to experiment new code, not interfering with other developers)
+- merge		:	to unify two different branches with a third unifying commit
+- tag		:	alias to commit hash, simple name to mark important commits such as releases
+- remote		:	repository in a different place (usually online)
 
-***********TUTORIALS********************
-----------COME INIZIALIZZARE GIT IN UNA CARTELLA LOCALE---------------
-# Imposta il nome dell'autore
+# TUTORIALS
+**COME INIZIALIZZARE GIT IN UNA CARTELLA LOCALE**
+- Imposta il nome dell'autore
 git config --global user.name Rickard75		
-# Imposta la mail dell'autore
+- Imposta la mail dell'autore**
 git config --global user.email pino@gmail.com		
-# Rende la cartella corrente una repository git; ora 'master' è il branch corrente
+- Rende la cartella corrente una repository git; ora 'master' è il branch corrente**
 git init 						
 
 ----------COME CREARE UN NUOVO BRANCH---------------
