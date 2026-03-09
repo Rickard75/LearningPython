@@ -26,8 +26,8 @@
 `git checkout main`
 - Aggiorna il branch principale
 `git pull origin main`
-- Crea e spostati sul nuovo branch
-`git checkout -b nome-del-nuovo-branch`
+- Crea e spostati sul nuovo branch prendendo lo stato attuale del remote `origin` nel suo branch `development`
+`git checkout -b nome-del-nuovo-branch origin/development` 
 - Pusha il nuovo branch sul repository remoto
 `git push origin nome-del-nuovo-branch`
 
